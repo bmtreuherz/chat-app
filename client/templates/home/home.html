@@ -1,6 +1,10 @@
 <template name="home">
-    <div class="container">
-        <button class="col-md-6 btn btn-danger">Click Me</button>
-        <p class="col-md-6 danger">You've pressed the button {{counter}} times.</p>
+  <!--Add css for this -->
+  <div class="home page">
+    <div class="wrapper">
+        {{#each chatRooms}}
+          {{> chatRoom}}
+        {{/each}}
     </div>
+  </div>
 </template>
