@@ -1,0 +1,65 @@
+/* CSS declarations go here */
+
+body {
+  background: url("/resources/background.jpg");
+}
+/*.container{
+background: url("public\resources\background.jpg");
+}*/
+.white-background{
+  background: white;
+}
+
+.submit{
+  margin-bottom: 20px;
+}
+
+.roomItem{
+  position: relative;
+  margin: 2px 12px;
+  background-color: #d9edf7;
+  border-radius: 5px;
+}
+.roomItem .join{
+  display: block;
+  margin: 12px 12px;
+  float: left;
+}
+
+.roomItem .delete{
+  display: block;
+  float: right;
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  margin-top: -7px;
+}
+.roomItem .room-content .room-header{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.roomItem .room-content .privacy-state{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 3px;
+}
+
+.roomItem .room-content .private{
+  color: orange;
+}
+.roomItem .room-content .public{
+  color: green;
+}
+
+.roomItem .room-content h3{
+  margin: 0;
+  line-height: 1.4;
+  font-size: 18px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.roomItem .room-content p{
+  margin: 0;
+}

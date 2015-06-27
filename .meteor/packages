@@ -6,6 +6,9 @@
 
 meteor-platform
 iron:router
-accounts-ui
-accounts-password
 bootswatch:paper
+bootstrap3:glyphicons
+ian:accounts-ui-bootstrap-3
+accounts-password
+bootswatch:yeti
+bootswatch:cerulean

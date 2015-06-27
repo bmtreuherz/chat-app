@@ -17,7 +17,8 @@
 
    ChatRooms.insert({
      name: 'Room 1',
-     private: 0,
+     private: false,
+     password: '',
      userId: bradleyId,
      creator: bradley.profile.username,
      createdOn: new Date(),
@@ -27,7 +28,8 @@
 
    ChatRooms.insert({
      name: 'Room 2',
-     private: 0,
+     private: true,
+     password: 'poop',
      userId: brianId,
      creator: brian.profile.username,
      createdOn: new Date(),

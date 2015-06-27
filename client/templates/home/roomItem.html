@@ -1,0 +1,25 @@
+<template name="roomItem">
+  <!-- TODO: add css for this-->
+  <div class="roomItem">
+    <a href="#" class=" join btn btn-primary">Join!</a>
+      {{#if isCreator}}
+      <a href="#" class="glyphicon glyphicon-remove-sign delete"></a>
+      {{/if}}
+    <div class="room-content">
+      <div class="room-header">
+        <h3>{{name}}</h3>
+        {{#if private}} <p class="privacy-state private"> (Private)</p>
+        {{else}}  <p class="privacy-state public"> (Public)</p>
+        {{/if}}
+      </div>
+      <div class="room-info">
+        <p>
+          creator: {{creator}}
+        </p>
+        <p>
+          members: {{numberOfMembers}} / 6
+        </p>
+      </div>
+    </div>
+  </div>
+</template>
