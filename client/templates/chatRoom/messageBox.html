@@ -1,0 +1,30 @@
+<template name="messageBox">
+    <div class="row" id="messageBox" >
+        <div class="col-lg-10" style="margin-left: 100px; margin-right: 100px;">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-comment"></span> {{name}} <br>
+                    <span class="glyphicon glyphicon-user"></span> Members: {{#each members}}{{username}}, {{/each}}
+                </div>
+                <div class="panel-body">
+                    <ul class="chat">
+                        {{#each messages}}
+                          {{> message}}
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="panel-footer">
+                  <form>
+                    <div class="input-group">
+                        <input id="btn-input" type="text" name="send" class="form-control input-sm" placeholder="Type your message here..." />
+                        <span class="input-group-btn">
+                            <button class="btn btn-warning btn-sm send" id="btn-chat">
+                                Send</button>
+                        </span>
+                    </div>
+                  </form>
+                </div>
+            </div>
+        </div>
+      </div>
+</template>

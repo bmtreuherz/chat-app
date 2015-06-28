@@ -6,16 +6,18 @@
 
    //create 2 users
    var bradleyId = Meteor.users.insert({
-     profile: {username: 'BradleyT'}
+     profile: {},
+     username: 'Brad'
    });
    var bradley = Meteor.users.findOne(bradleyId);
 
    var brianId = Meteor.users.insert({
-     profile: {username: 'Brian'}
+     profile: {},
+     username: 'Brian'
    });
    var brian = Meteor.users.findOne(brianId);
 
-   ChatRooms.insert({
+   var room1Id = ChatRooms.insert({
      name: 'Room 1',
      private: false,
      password: '',
@@ -23,7 +25,7 @@
      creator: bradley.profile.username,
      createdOn: new Date(),
      numberOfMembers: 1,
-     members: []
+     members: [bradley]
    });
 
    ChatRooms.insert({
@@ -34,6 +36,28 @@
      creator: brian.profile.username,
      createdOn: new Date(),
      numberOfMembers: 1,
-     members: []
+     members: [brian]
+   });
+
+   Messages.insert({
+     chatId: room1Id,
+     content: "Here is a message from Bradley",
+     userId: bradleyId,
+     username: bradley.profile.username,
+     time: new Date(now - 3 * 3600 * 1000)
+   });
+   Messages.insert({
+     chatId: room1Id,
+     content: "Here another message from Bradley",
+     userId: bradleyId,
+     username: bradley.profile.username,
+     time: new Date(now - 3 * 3600 * 1000)
+   });
+   Messages.insert({
+     chatId: room1Id,
+     content: "And another from Bradley",
+     userId: bradleyId,
+     username: bradley.profile.username,
+     time: new Date(now - 3 * 3600 * 1000)
    });
  }

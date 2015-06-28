@@ -17,7 +17,7 @@ Template.createRoom.events({
       }
 
       //TODO: implement
-      // Router.go('chatPage', {_id: result._id});
+      Router.go('chatRoom', {_id: results._id});
     });
   },
   'change #togglePrivate' : function(event){

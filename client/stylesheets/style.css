@@ -1,7 +1,7 @@
 /* CSS declarations go here */
 
 body {
-  background: url("/resources/background.jpg");
+  background: url("/resources/background3.jpg");
 }
 /*.container{
 background: url("public\resources\background.jpg");
@@ -62,4 +62,26 @@ background: url("public\resources\background.jpg");
 
 .roomItem .room-content p{
   margin: 0;
+}
+
+.heading h1{
+  color: white;
+  display: inline-block;
+  float: left;
+}
+
+.heading h4{
+  color: white;
+  display: inline-block;
+  float: left;
+  margin-top: 37px;
+  margin-bottom: 10px;
+  margin-left: 8px;
+
+}
+
+.message-container{
+   border: solid black 5px;
+   overflow-y: scroll;
+   height: 500px;
 }
