@@ -1,7 +1,8 @@
 /* CSS declarations go here */
 
 body {
-  background: url("/resources/background4.jpg");
+  /*background: url("/resources/background4.jpg");*/
+  background: #E8E8DC;
 }
 /*.container{
 background: url("public\resources\background.jpg");
