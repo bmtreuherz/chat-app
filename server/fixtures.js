@@ -22,7 +22,7 @@
      private: false,
      password: '',
      userId: bradleyId,
-     creator: bradley.profile.username,
+     creator: bradley.username,
      createdOn: new Date(),
      numberOfMembers: 1,
      members: [bradley]
@@ -33,7 +33,7 @@
      private: true,
      password: 'poop',
      userId: brianId,
-     creator: brian.profile.username,
+     creator: brian.username,
      createdOn: new Date(),
      numberOfMembers: 1,
      members: [brian]

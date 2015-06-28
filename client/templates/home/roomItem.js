@@ -1,6 +1,13 @@
+Template.roomItem.rendered = function(){
+  Session.set('enterPassword', false);
+};
+
 Template.roomItem.helpers({
   isCreator: function(){
     return this.userId === Meteor.userId();
+  },
+  enterPassword: function(){
+    return Session.get("enterPassword");
   }
 });
 
@@ -12,32 +19,18 @@ Template.roomItem.events({
   'click .join' : function(e){
     e.preventDefault();
 
-    var roomId = this._id;
     if(Meteor.user()){
-      // make sure that the user isn't already a member of the room
-      var exists = false;
-      this.members.forEach(function(member){
-        if (member._id == Meteor.userId())
-          exists = true;
-      });
-      if(!exists){
-        this.members.push(Meteor.user());
-        // TODO: make this cleaner
-        ChatRooms.update(roomId,{$set: {members: this.members}}, function(error){
-          if(error){
-            console.log(error);
-          }
-          ChatRooms.update(roomId,{$inc: {numberOfMembers: 1}}, function(error){
-            if(error){
-              console.log(error);
-            }
-          });
-        });
+      var roomId = this._id;
+
+      // if the room is private prompt the user to enter a password
+      if(ChatRooms.findOne({_id: roomId}).private){
+        Session.set('currentRoomId', roomId);
+        Modal.show('password', ChatRooms.findOne({_id: roomId}));
+      }else{
+        Meteor.call('goToRoom', roomId);
       }
-      Router.go('chatRoom', {_id: roomId});
     }else{
-      //TODO: better error handling
-      console.log("you need to log in");
+      Modal.show('notLoggedIn');
     }
   }
 });
