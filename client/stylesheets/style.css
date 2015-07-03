@@ -1,12 +1,9 @@
 /* CSS declarations go here */
 
 body {
-  /*background: url("/resources/background4.jpg");*/
   background: #EEE;
 }
-/*.container{
-background: url("public\resources\background.jpg");
-}*/
+
 .white-background{
   background: white;
 }
