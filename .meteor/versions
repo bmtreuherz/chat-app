@@ -10,8 +10,6 @@ boilerplate-generator@1.0.3
 bootstrap3:base@3.2.0_2
 bootstrap3:glyphicons@3.2.0_2
 bootswatch:cerulean@3.3.4_2
-bootswatch:paper@3.3.4_2
-bootswatch:yeti@3.3.4_2
 callback-hook@1.0.3
 check@1.0.5
 ddp@1.1.0

@@ -1,0 +1,16 @@
+<template name="emptyList">
+
+  <div class="container">
+    <h1>There are currently no chat rooms.</h1>
+    {{#if loggedIn}}
+    <p>
+      Click the link above to create a new chat!
+    </p>
+    {{else}}
+    <p>
+      Log in or create an account and get started!
+    </p>
+    {{/if}}
+  </div>
+
+</template>

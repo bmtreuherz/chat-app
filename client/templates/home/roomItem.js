@@ -23,11 +23,11 @@ Template.roomItem.events({
       var roomId = this._id;
 
       // if the room is private prompt the user to enter a password
-      if(ChatRooms.findOne({_id: roomId}).private){
+      if(ChatRooms.findOne({_id: roomId}).private && ChatRooms.findOne({_id: roomId}).creator._id != Meteor.userId()){
         Session.set('currentRoomId', roomId);
         Modal.show('password', ChatRooms.findOne({_id: roomId}));
       }else{
-        Meteor.call('goToRoom', roomId);
+        Router.go('chatRoom', {_id: roomId});
       }
     }else{
       Modal.show('notLoggedIn');

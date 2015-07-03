@@ -5,6 +5,9 @@
         {{#each chatRooms}}
           {{> roomItem}}
         {{/each}}
+        {{#if noChats}}
+          {{> emptyList}}
+        {{/if}}
     </div>
   </div>
 </template>

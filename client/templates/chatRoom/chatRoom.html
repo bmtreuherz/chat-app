@@ -1,5 +1,14 @@
 <template name="chatRoom">
-      {{#with chatRoom}}
-        {{> messageBox}}
-      {{/with}}
+      {{#if chatRoom}}
+        {{#with chatRoom}}
+          {{> messageBox}}
+        {{/with}}
+      {{else}}
+      <div class="container">
+        <h1>This chat no longer exists!</h1>
+        <p>
+          It looks like the host decided to delete this room.
+        </p>
+      </div>    
+      {{/if}}
 </template>

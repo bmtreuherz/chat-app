@@ -27,6 +27,7 @@ Template.messageBox.helpers({
   }
 })
 
+// make sure that the message box scrolls to show the most recent messages
 window.setInterval(function(){
   if(Messages.find({}).count() > numMessages){
     $('#list').scrollTop( $('#list').prop("scrollHeight") );

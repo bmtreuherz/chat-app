@@ -2,9 +2,6 @@ Template.createRoom.events({
   'submit form' : function(e){
     e.preventDefault();
 
-    console.log(event);
-    console.log($(e.target).find('[name=togglePrivate]').checked);
-
     var room={
       name: $(e.target).find('[name=name]').val(),
       private: e.currentTarget[1].checked,
@@ -21,7 +18,6 @@ Template.createRoom.events({
     });
   },
   'change #togglePrivate' : function(event){
-    console.log(event);
     Session.set('isPrivate', event.target.checked);
   }
 });
